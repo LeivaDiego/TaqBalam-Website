@@ -22,6 +22,7 @@ export default function App() {
                     </Routes>
                 </Suspense>
             </main>
+
             <footer className="py-12 text-center opacity-60">© Motorsport Team</footer>
         </div>
     )

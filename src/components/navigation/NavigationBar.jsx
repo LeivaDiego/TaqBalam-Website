@@ -7,12 +7,11 @@ import {
     MobileNavHeader,
     MobileNavToggle,
     MobileNavMenu,
-} from '@UI/resizable-navbar' // point to your file
+} from '@UI/resizable-navbar'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 export function NavigationBar() {
-    // Use "to" for SPA routes. Your NavItems already detects `to` vs `href`.
     const navItems = [
         { name: 'Home', to: '/' },
         { name: 'Gallery', to: '/gallery' },
