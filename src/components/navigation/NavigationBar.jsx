@@ -37,7 +37,9 @@ export function NavigationBar() {
                         <NavbarLogo />
                         <MobileNavToggle
                             isOpen={isMobileMenuOpen}
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            onClick={() =>
+                                setIsMobileMenuOpen(!isMobileMenuOpen)
+                            }
                         />
                     </MobileNavHeader>
 

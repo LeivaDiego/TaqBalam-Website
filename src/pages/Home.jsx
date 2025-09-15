@@ -7,7 +7,9 @@ export default function Home() {
 
             <section id="about">
                 <h2 className="text-3xl font-semibold">About Us</h2>
-                <p className="mt-4 opacity-80">We’re the university’s Formula Student team…</p>
+                <p className="mt-4 opacity-80">
+                    We’re the university’s Formula Student team…
+                </p>
             </section>
         </div>
     )

@@ -1,6 +1,11 @@
 import { cn } from '@Lib/utils'
 import { IconMenu2, IconX } from '@tabler/icons-react'
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'motion/react'
+import {
+    motion,
+    AnimatePresence,
+    useScroll,
+    useMotionValueEvent,
+} from 'motion/react'
 import React, { useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
@@ -21,9 +26,14 @@ export const Navbar = ({ children, className }) => {
     })
 
     return (
-        <motion.div ref={ref} className={cn('fixed inset-x-0 top-0 z-40 w-full', className)}>
+        <motion.div
+            ref={ref}
+            className={cn('fixed inset-x-0 top-0 z-40 w-full', className)}
+        >
             {React.Children.map(children, (child) =>
-                React.isValidElement(child) ? React.cloneElement(child, { visible }) : child,
+                React.isValidElement(child)
+                    ? React.cloneElement(child, { visible })
+                    : child,
             )}
         </motion.div>
     )
@@ -49,9 +59,9 @@ export const NavBody = ({ children, className, visible }) => {
                 minWidth: '800px',
             }}
             className={cn(
-                `relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center
-                justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex
-                dark:bg-transparent`,
+                `relative z-[60] mx-auto hidden w-full max-w-7xl flex-row
+                items-center justify-between self-start rounded-full
+                bg-transparent px-4 py-2 lg:flex dark:bg-transparent`,
                 visible && 'bg-white/80 dark:bg-neutral-950/80',
                 className,
             )}
@@ -68,8 +78,9 @@ export const NavItems = ({ items, className, onItemClick }) => {
         <motion.div
             onMouseLeave={() => setHovered(null)}
             className={cn(
-                `absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2
-                text-sm font-medium text-zinc-600 transition hover:text-zinc-800 lg:flex`,
+                `absolute inset-0 hidden flex-1 flex-row items-center
+                justify-center space-x-2 text-sm font-medium text-zinc-600
+                transition hover:text-zinc-800 lg:flex`,
                 className,
             )}
         >
@@ -88,7 +99,8 @@ export const NavItems = ({ items, className, onItemClick }) => {
                         onClick={onItemClick}
                         className={({ isActive }) =>
                             cn(
-                                'relative px-4 py-2 text-neutral-600 dark:text-neutral-300',
+                                `relative px-4 py-2 text-neutral-600
+                                dark:text-neutral-300`,
                                 isRouterLink && isActive && 'font-semibold',
                             )
                         }
@@ -96,8 +108,8 @@ export const NavItems = ({ items, className, onItemClick }) => {
                         {hovered === idx && (
                             <motion.div
                                 layoutId="hovered"
-                                className={`absolute inset-0 h-full w-full rounded-full bg-gray-100
-                                dark:bg-neutral-800`}
+                                className={`absolute inset-0 h-full w-full
+                                rounded-full bg-gray-100 dark:bg-neutral-800`}
                             />
                         )}
                         <span className="relative z-20">{item.name}</span>
@@ -128,8 +140,9 @@ export const MobileNav = ({ children, className, visible }) => {
                 damping: 50,
             }}
             className={cn(
-                `relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center
-                justify-between bg-transparent px-0 py-2 lg:hidden`,
+                `relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)]
+                flex-col items-center justify-between bg-transparent px-0 py-2
+                lg:hidden`,
                 visible && 'bg-white/80 dark:bg-neutral-950/80',
                 className,
             )}
@@ -141,7 +154,12 @@ export const MobileNav = ({ children, className, visible }) => {
 
 export const MobileNavHeader = ({ children, className }) => {
     return (
-        <div className={cn('flex w-full flex-row items-center justify-between', className)}>
+        <div
+            className={cn(
+                'flex w-full flex-row items-center justify-between',
+                className,
+            )}
+        >
             {children}
         </div>
     )
@@ -156,8 +174,9 @@ export const MobileNavMenu = ({ children, className, isOpen }) => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     className={cn(
-                        `absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start
-                        justify-start gap-4 rounded-lg bg-white px-4 py-8
+                        `absolute inset-x-0 top-16 z-50 flex w-full flex-col
+                        items-start justify-start gap-4 rounded-lg bg-white px-4
+                        py-8
                         shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]
                         dark:bg-neutral-950`,
                         className,
@@ -182,7 +201,8 @@ export const NavbarLogo = () => {
     return (
         <NavLink
             to="/"
-            className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal"
+            className={`relative z-20 mr-4 flex items-center space-x-2 px-2 py-1
+                text-sm font-normal`}
         >
             <img
                 src="https://assets.aceternity.com/logo-dark.png"
@@ -190,7 +210,9 @@ export const NavbarLogo = () => {
                 width={30}
                 height={30}
             />
-            <span className="font-medium text-black dark:text-white">Motorsport</span>
+            <span className="font-medium text-black dark:text-white">
+                Motorsport
+            </span>
         </NavLink>
     )
 }
