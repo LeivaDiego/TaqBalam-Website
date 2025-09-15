@@ -1,3 +1,7 @@
+/**
+ * Home page component.
+ * @returns {JSX.Element} The rendered Home component.
+ */
 export default function Home() {
 	return (
 		<div className="mx-auto max-w-6xl space-y-24 px-4 py-24">

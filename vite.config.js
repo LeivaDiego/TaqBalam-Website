@@ -9,12 +9,8 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'@': fileURLToPath(new URL('./src', import.meta.url)),
-			'@Components': fileURLToPath(
-				new URL('./src/components', import.meta.url),
-			),
-			'@UI': fileURLToPath(
-				new URL('./src/components/ui', import.meta.url),
-			),
+			'@Components': fileURLToPath(new URL('./src/components', import.meta.url)),
+			'@UI': fileURLToPath(new URL('./src/components/ui', import.meta.url)),
 			'@Navigation': fileURLToPath(
 				new URL('./src/components/navigation', import.meta.url),
 			),

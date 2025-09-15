@@ -1,3 +1,7 @@
+/**
+ * Timeline component for displaying the project timeline.
+ * @returns {JSX.Element} The rendered Timeline component.
+ */
 export default function Timeline() {
 	return (
 		<div className="mx-auto max-w-6xl px-4 py-24">

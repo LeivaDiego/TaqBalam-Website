@@ -1,3 +1,7 @@
+/**
+ * Gallery component for displaying a collection of images.
+ * @returns {JSX.Element}
+ */
 export default function Gallery() {
 	return (
 		<div className="mx-auto max-w-6xl px-4 py-24">
