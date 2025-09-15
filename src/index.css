@@ -4,27 +4,27 @@
 html,
 body,
 #root {
-  height: 100%;
+    height: 100%;
 }
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  background: black;
-  color: white;
-  font-family:
-    'Inter',
-    system-ui,
-    -apple-system,
-    Segoe UI,
-    Roboto,
-    sans-serif;
+    margin: 0;
+    background: black;
+    color: white;
+    font-family:
+        'Inter',
+        system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        sans-serif;
 }
 
 /* Optional: better text rendering */
 * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
