@@ -1,3 +1,6 @@
+import React from 'react'
+import { GradientCard } from '@UI/gradient-card'
+
 /**
  * Home page component.
  * @returns {JSX.Element} The rendered Home component.
@@ -15,6 +18,49 @@ export default function Home() {
 					We’re the university’s Formula Student team…
 				</p>
 			</section>
+			<div className="place-items-left center flex">
+				<GradientCard
+					className={
+						'max-w-sm rounded-[22px] bg-white p-4 sm:p-10 dark:bg-zinc-900'
+					}
+				>
+					<img
+						src={`src/assets/images/image-placeholder.webp`}
+						alt="placeholder image"
+						height="400"
+						width="400"
+						className="object-contain"
+					/>
+					<p
+						className={`mt-4 mb-2 text-base text-black sm:text-xl
+							dark:text-neutral-200`}
+					>
+						Hero CARD
+					</p>
+
+					<p className="text-sm text-neutral-600 dark:text-neutral-400">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+						enim ad minim veniam, quis nostrud exercitation ullamco laboris
+						nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+						reprehenderit in voluptate velit esse cillum dolore eu fugiat
+						nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+						sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+					<button
+						className={`mt-4 flex items-center space-x-1 rounded-full bg-black
+							py-1 pr-1 pl-4 text-xs font-bold text-white dark:bg-zinc-800`}
+					>
+						<span>Button</span>
+						<span
+							className={`rounded-full bg-zinc-700 px-2 py-0 text-[0.6rem]
+								text-white`}
+						>
+							Click
+						</span>
+					</button>
+				</GradientCard>
+			</div>
 		</div>
 	)
 }
