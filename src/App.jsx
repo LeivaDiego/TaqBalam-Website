@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { NavigationBar } from '@Navigation/NavigationBar'
 import { AuroraBackground } from '@UI/aurora-background'
 import { motion } from 'motion/react'
+import ScrollToTop from '@Navigation/ScrollToTop'
 
 import Home from './pages/Home.jsx'
 import Gallery from './pages/Gallery.jsx'
@@ -12,6 +13,7 @@ import Join from './pages/Join.jsx'
 export default function App() {
 	return (
 		<AuroraBackground>
+			<ScrollToTop behavior="auto" />
 			<motion.div
 				initial={{ opacity: 0.0, y: 40 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +23,7 @@ export default function App() {
 					ease: 'easeInOut',
 				}}
 			>
-				<div className="relative z-10 min-h-dvh text-neutral-100">
+				<div className="relative z-10 min-h-screen text-neutral-100">
 					<NavigationBar />
 					<main>
 						<Suspense

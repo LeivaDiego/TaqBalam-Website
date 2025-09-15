@@ -8,7 +8,7 @@ export const AuroraBackground = ({
 	...props
 }) => {
 	return (
-		<div className={cn('relative min-h-dvh', className)} {...props}>
+		<div className={cn('relative min-h-screen', className)} {...props}>
 			<div
 				className={`pointer-events-none fixed inset-0 -z-10
 					overflow-hidden`}
