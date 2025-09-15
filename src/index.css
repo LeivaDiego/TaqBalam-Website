@@ -28,7 +28,7 @@ body {
 		sans-serif;
 }
 
-/* Optional: better text rendering */
+/* Text rendering */
 * {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;

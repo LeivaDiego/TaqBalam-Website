@@ -1,4 +1,3 @@
-// This component defines a responsive navigation bar with both desktop and mobile views.
 import {
 	Navbar,
 	NavBody,
@@ -12,34 +11,22 @@ import {
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-/**
- * Navigation bar component for the application.
- * @returns {JSX.Element} The rendered navigation bar.
- */
 export function NavigationBar() {
-	// Define navigation items
 	const navItems = [
 		{ name: 'Home', to: '/' },
 		{ name: 'Gallery', to: '/gallery' },
 		{ name: 'Timeline', to: '/timeline' },
 		{ name: 'Join', to: '/join' },
 	]
-
-	// State to manage mobile menu visibility
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
-	// Render the navigation bar
 	return (
 		<div className="relative w-full">
 			<Navbar>
-				{/* Desktop */}
 				<NavBody>
 					<NavbarLogo />
 					<NavItems items={navItems} />
 					<div className="w-[80px]" />
 				</NavBody>
-
-				{/* Mobile */}
 				<MobileNav>
 					<MobileNavHeader>
 						<NavbarLogo />
@@ -48,12 +35,7 @@ export function NavigationBar() {
 							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 						/>
 					</MobileNavHeader>
-
-					{/* Mobile navigation menu */}
-					<MobileNavMenu
-						isOpen={isMobileMenuOpen}
-						onClose={() => setIsMobileMenuOpen(false)}
-					>
+					<MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
 						{navItems.map((item) => (
 							<NavLink
 								key={item.name}

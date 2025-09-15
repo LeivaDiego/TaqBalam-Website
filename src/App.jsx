@@ -12,10 +12,6 @@ import Gallery from './pages/Gallery.jsx'
 import Timeline from './pages/Timeline.jsx'
 import Join from './pages/Join.jsx'
 
-/**
- * Main application component with routing and navigation.
- * @returns {JSX.Element} The main App component with routing and navigation.
- */
 export default function App() {
 	return (
 		// Aurora background wrapper for visual effect.
@@ -47,10 +43,7 @@ export default function App() {
 						</Suspense>
 					</main>
 					{/* Footer section at the bottom of the page. */}
-					<footer
-						className={`bg-black/20 py-12 text-center opacity-80
-							backdrop-blur-sm`}
-					>
+					<footer className={'bg-black/20 py-12 text-center opacity-80 backdrop-blur-sm'}>
 						© Motorsport Team
 					</footer>
 				</div>

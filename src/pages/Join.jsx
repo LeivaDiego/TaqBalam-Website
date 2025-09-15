@@ -1,7 +1,3 @@
-/**
- * Join component for the Join page.
- * @returns {JSX.Element}  The rendered Join component.
- */
 export default function Join() {
 	return (
 		<div className="mx-auto max-w-3xl px-4 py-24 text-center">
