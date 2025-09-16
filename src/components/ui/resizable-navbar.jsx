@@ -163,6 +163,6 @@ export const MobileNavToggle = ({ isOpen, onClick }) => {
 export const NavbarLogo = () => (
 	<NavLink to="/" className="relative z-20 mr-4 flex items-center gap-2 px-2 py-1 text-sm">
 		<img src="src/assets/images/TaqBalam-Logo.svg" alt="logo" width={30} height={30} />
-		<span className="font-cinzel text-brand-500">Taq ' Balam</span>
+		<span className="font-cinzel text-text">Taq ' Balam</span>
 	</NavLink>
 )
