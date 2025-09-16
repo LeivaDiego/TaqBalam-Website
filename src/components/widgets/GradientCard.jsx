@@ -8,7 +8,7 @@ export function GradientCard({ children, className, ...props }) {
 			borderWidth={4}
 			radius={22}
 			{...props}
-			className={cn('w-full max-w-xl bg-bg sm:p-10', className)}
+			className={cn('w-full max-w-xl bg-bg p-4 sm:p-10', className)}
 		>
 			{children}
 		</BackgroundGradient>
