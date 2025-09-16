@@ -53,7 +53,7 @@ export default function Home() {
 						ease="back.inOut(2)"
 						scrollStart="center bottom+=50%"
 						scrollEnd="bottom bottom-=40%"
-						stagger={0}
+						stagger={0.03}
 					>
 						Scroll Float Example
 					</ScrollFloat>

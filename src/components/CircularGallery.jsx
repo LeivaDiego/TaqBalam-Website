@@ -134,9 +134,7 @@ class Media {
 		this.onResize()
 	}
 	createShader() {
-		const texture = new Texture(this.gl, {
-			generateMipmaps: true,
-		})
+		const texture = new Texture(this.gl, { generateMipmaps: true })
 		this.program = new Program(this.gl, {
 			depthTest: false,
 			depthWrite: false,
@@ -333,10 +331,7 @@ class App {
 		this.scene = new Transform()
 	}
 	createGeometry() {
-		this.planeGeometry = new Plane(this.gl, {
-			heightSegments: 50,
-			widthSegments: 100,
-		})
+		this.planeGeometry = new Plane(this.gl, { heightSegments: 50, widthSegments: 100 })
 	}
 	createMedias(items, bend = 1, textColor, borderRadius, font) {
 		const defaultItems = [
@@ -389,11 +384,7 @@ class App {
 		this.isDown = false
 		this.onCheck()
 	}
-	onWheel(e) {
-		const delta = e.deltaY || e.wheelDelta || e.detail
-		this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.2
-		this.onCheckDebounce()
-	}
+
 	onCheck() {
 		if (!this.medias || !this.medias[0]) return
 		const width = this.medias[0].width
@@ -401,15 +392,14 @@ class App {
 		const item = width * itemIndex
 		this.scroll.target = this.scroll.target < 0 ? -item : item
 	}
+
 	onResize() {
 		this.screen = {
 			width: this.container.clientWidth,
 			height: this.container.clientHeight,
 		}
 		this.renderer.setSize(this.screen.width, this.screen.height)
-		this.camera.perspective({
-			aspect: this.screen.width / this.screen.height,
-		})
+		this.camera.perspective({ aspect: this.screen.width / this.screen.height })
 		const fov = (this.camera.fov * Math.PI) / 180
 		const height = 2 * Math.tan(fov / 2) * this.camera.position.z
 		const width = height * this.camera.aspect
@@ -420,6 +410,7 @@ class App {
 			)
 		}
 	}
+
 	update() {
 		this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease)
 		const direction = this.scroll.current > this.scroll.last ? 'right' : 'left'
@@ -430,15 +421,14 @@ class App {
 		this.scroll.last = this.scroll.current
 		this.raf = window.requestAnimationFrame(this.update.bind(this))
 	}
+
 	addEventListeners() {
 		this.boundOnResize = this.onResize.bind(this)
-		this.boundOnWheel = this.onWheel.bind(this)
 		this.boundOnTouchDown = this.onTouchDown.bind(this)
 		this.boundOnTouchMove = this.onTouchMove.bind(this)
 		this.boundOnTouchUp = this.onTouchUp.bind(this)
+
 		window.addEventListener('resize', this.boundOnResize)
-		window.addEventListener('mousewheel', this.boundOnWheel)
-		window.addEventListener('wheel', this.boundOnWheel)
 		window.addEventListener('mousedown', this.boundOnTouchDown)
 		window.addEventListener('mousemove', this.boundOnTouchMove)
 		window.addEventListener('mouseup', this.boundOnTouchUp)
@@ -446,11 +436,10 @@ class App {
 		window.addEventListener('touchmove', this.boundOnTouchMove)
 		window.addEventListener('touchend', this.boundOnTouchUp)
 	}
+
 	destroy() {
 		window.cancelAnimationFrame(this.raf)
 		window.removeEventListener('resize', this.boundOnResize)
-		window.removeEventListener('mousewheel', this.boundOnWheel)
-		window.removeEventListener('wheel', this.boundOnWheel)
 		window.removeEventListener('mousedown', this.boundOnTouchDown)
 		window.removeEventListener('mousemove', this.boundOnTouchMove)
 		window.removeEventListener('mouseup', this.boundOnTouchUp)
@@ -483,14 +472,14 @@ export function CircularGallery({
 			scrollSpeed,
 			scrollEase,
 		})
-		return () => {
-			app.destroy()
-		}
+		return () => app.destroy()
 	}, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase])
+
 	return (
 		<div
-			className="h-full w-full cursor-grab overflow-hidden active:cursor-grabbing"
+			className="h-full w-full cursor-grab overflow-hidden select-none active:cursor-grabbing"
 			ref={containerRef}
+			style={{ touchAction: 'none' }}
 		/>
 	)
 }
