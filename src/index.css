@@ -33,6 +33,7 @@
 	--color-accent: var(--color-brand-400);
 	--color-accent-foreground: #052118;
 	--color-ring: var(--color-brand-400);
+	--color-glow: var(--color-brand-200);
 
 	/* Optional status colors derived from ramp */
 	--color-success: var(--color-brand-500);

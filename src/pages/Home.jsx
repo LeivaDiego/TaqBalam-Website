@@ -6,7 +6,8 @@ import { BlurText } from '@Text/BlurText'
 import { ScrollReveal } from '@Text/ScrollReveal'
 import { ScrollFloat } from '@Text/ScrollFloat'
 import { TimelineDemo } from '@Widgets/TimelineDemo'
-import { HoverBorderGradientDemo } from '@Widgets/HoverBorderButton'
+import { HoverBorderButton } from '@Widgets/HoverBorderButton'
+import { SiGithub, SiReact } from 'react-icons/si'
 
 export default function Home() {
 	return (
@@ -21,8 +22,7 @@ export default function Home() {
 				<GradientCard className="max-w-xl">
 					<p className="text-lg">We design and build high-performance race cars.</p>
 				</GradientCard>
-
-				<HoverBorderGradientDemo />
+				<HoverBorderButton label="GitHub" icon={<SiGithub className="h-4 w-4" />} />
 			</section>
 
 			<section id="sponsors" className="space-y-8">
