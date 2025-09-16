@@ -5,6 +5,40 @@
 	color-scheme: dark;
 }
 
+@theme inline {
+	/* === Brand ramp (greens) === */
+	--color-brand-50: #e7fcf4;
+	--color-brand-100: #b6f3dd;
+	--color-brand-200: #6fe5bf;
+	--color-brand-300: #2dd39a; /* brightest (given) */
+	--color-brand-400: #17c98b;
+	--color-brand-500: #00bc7d; /* mid/primary (given) */
+	--color-brand-600: #0d8a60;
+	--color-brand-700: #14533d;
+	--color-brand-800: #0e3a27; /* near-dark (given) */
+	--color-brand-900: #11382b; /* darkest (given) */
+	--color-brand-950: #0b241b;
+
+	/* === Neutrals (for dark surfaces) === */
+	--color-bg: #0b1210; /* app background */
+	--color-surface: #0f1b17; /* section/blocks */
+	--color-card: #11211a; /* cards */
+	--color-border: #1e3a2e;
+	--color-text: #e6f6ef; /* main text */
+	--color-muted: #a7c3b8; /* secondary text */
+
+	/* === Semantic aliases (Tailwind v4) === */
+	--color-primary: var(--color-brand-500);
+	--color-primary-foreground: #062017;
+	--color-accent: var(--color-brand-400);
+	--color-accent-foreground: #052118;
+	--color-ring: var(--color-brand-400);
+
+	/* Optional status colors derived from ramp */
+	--color-success: var(--color-brand-500);
+	--color-success-foreground: #062017;
+}
+
 html,
 body,
 #root {
