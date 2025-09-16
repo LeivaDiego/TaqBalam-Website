@@ -4,6 +4,7 @@ import { SponsorsLoop } from '@Components/SponsorsLoop'
 import { BackgroundGradient } from '@UI/background-gradient'
 import { BlurText } from '@Components/BlurText'
 import { ScrollReveal } from '@Components/ScrollReveal'
+import { ScrollFloat } from '@Components/ScrollFloat'
 
 export default function Home() {
 	return (
@@ -47,6 +48,15 @@ export default function Home() {
 						Expedita, ratione ullam asperiores dolore, totam voluptatibus, voluptas autem impedit
 						natus eos in cupiditate ducimus! Exercitationem eaque dignissimos porro.
 					</ScrollReveal>
+					<ScrollFloat
+						animationDuration={1}
+						ease="back.inOut(2)"
+						scrollStart="center bottom+=50%"
+						scrollEnd="bottom bottom-=40%"
+						stagger={0}
+					>
+						Scroll Float Example
+					</ScrollFloat>
 				</div>
 			</section>
 		</div>
