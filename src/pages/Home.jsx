@@ -3,6 +3,7 @@ import { CircularGallery } from '@Components/CircularGallery'
 import { SponsorsLoop } from '@Components/SponsorsLoop'
 import { BackgroundGradient } from '@UI/background-gradient'
 import { BlurText } from '@Components/BlurText'
+import { ScrollReveal } from '@Components/ScrollReveal'
 
 export default function Home() {
 	return (
@@ -41,6 +42,11 @@ export default function Home() {
 						direction="top"
 						className="mb-8 text-2xl"
 					/>
+					<ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={5} blurStrength={10}>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, excepturi delectus.
+						Expedita, ratione ullam asperiores dolore, totam voluptatibus, voluptas autem impedit
+						natus eos in cupiditate ducimus! Exercitationem eaque dignissimos porro.
+					</ScrollReveal>
 				</div>
 			</section>
 		</div>
