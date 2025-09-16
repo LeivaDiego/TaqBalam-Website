@@ -36,7 +36,8 @@ export function HoverBorderGradient({
 			duration * 1000,
 		)
 		return () => clearInterval(id)
-	}, [hovered, duration, clockwise])
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [hovered])
 
 	return (
 		<Tag
