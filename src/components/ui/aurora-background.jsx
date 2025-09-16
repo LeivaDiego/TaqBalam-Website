@@ -3,9 +3,12 @@ import React from 'react'
 
 export const AuroraBackground = ({ className, children, showRadialGradient = true, ...props }) => {
 	return (
-		<div className={cn('relative min-h-screen', className)} {...props}>
+		<div className={cn('relative isolate min-h-screen', className)} {...props}>
+			{/* Base backdrop */}
+			<div className="pointer-events-none fixed inset-0 -z-10 bg-brand-950" />
+			{/* Aurora layer sits above body, below content */}
 			<div
-				className={'pointer-events-none fixed inset-0 -z-10 overflow-hidden'}
+				className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
 				style={{
 					'--aurora':
 						'repeating-linear-gradient(100deg,#3b82f6_10%,#a5b4fc_15%,#93c5fd_20%,#ddd6fe_25%,#60a5fa_30%)',
@@ -43,6 +46,7 @@ export const AuroraBackground = ({ className, children, showRadialGradient = tru
 					)}
 				/>
 			</div>
+
 			<main className="relative z-10">{children}</main>
 		</div>
 	)
