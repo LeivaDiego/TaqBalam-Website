@@ -5,6 +5,7 @@ import { BackgroundGradient } from '@UI/background-gradient'
 import { BlurText } from '@Components/BlurText'
 import { ScrollReveal } from '@Components/ScrollReveal'
 import { ScrollFloat } from '@Components/ScrollFloat'
+import { TimelineDemo } from '@Components/TimelineDemo'
 
 export default function Home() {
 	return (
@@ -58,6 +59,10 @@ export default function Home() {
 						Scroll Float Example
 					</ScrollFloat>
 				</div>
+			</section>
+			<section id="timeline" className="space-y-8">
+				<h2 className="text-3xl font-semibold">Timeline</h2>
+				<TimelineDemo />
 			</section>
 		</div>
 	)
