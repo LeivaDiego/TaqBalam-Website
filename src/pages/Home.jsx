@@ -1,11 +1,11 @@
 import React from 'react'
-import { CircularGallery } from '@Components/CircularGallery'
-import { SponsorsLoop } from '@Components/SponsorsLoop'
+import { CircularGallery } from '@Widgets/CircularGallery'
+import { SponsorsLoop } from '@Widgets/SponsorsLoop'
 import { BackgroundGradient } from '@UI/background-gradient'
-import { BlurText } from '@Components/BlurText'
-import { ScrollReveal } from '@Components/ScrollReveal'
-import { ScrollFloat } from '@Components/ScrollFloat'
-import { TimelineDemo } from '@Components/TimelineDemo'
+import { BlurText } from '@Text/BlurText'
+import { ScrollReveal } from '@Text/ScrollReveal'
+import { ScrollFloat } from '@Text/ScrollFloat'
+import { TimelineDemo } from '@Widgets/TimelineDemo'
 
 export default function Home() {
 	return (

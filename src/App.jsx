@@ -8,9 +8,6 @@ import ScrollToTop from '@Navigation/ScrollToTop'
 
 // Page components
 import Home from './pages/Home.jsx'
-import Gallery from './pages/Gallery.jsx'
-import Timeline from './pages/Timeline.jsx'
-import Join from './pages/Join.jsx'
 
 export default function App() {
 	return (
@@ -36,9 +33,6 @@ export default function App() {
 							{/* Define application routes. */}
 							<Routes>
 								<Route path="/" element={<Home />} />
-								<Route path="/gallery" element={<Gallery />} />
-								<Route path="/timeline" element={<Timeline />} />
-								<Route path="/join" element={<Join />} />
 							</Routes>
 						</Suspense>
 					</main>
