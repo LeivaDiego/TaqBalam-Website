@@ -1,11 +1,12 @@
 import React from 'react'
 import { CircularGallery } from '@Widgets/CircularGallery'
 import { SponsorsLoop } from '@Widgets/SponsorsLoop'
-import { BackgroundGradient } from '@UI/background-gradient'
+import { GradientCard } from '@Widgets/GradientCard'
 import { BlurText } from '@Text/BlurText'
 import { ScrollReveal } from '@Text/ScrollReveal'
 import { ScrollFloat } from '@Text/ScrollFloat'
 import { TimelineDemo } from '@Widgets/TimelineDemo'
+import { HoverBorderGradientDemo } from '@Widgets/HoverBorderButton'
 
 export default function Home() {
 	return (
@@ -17,9 +18,11 @@ export default function Home() {
 			<section id="about">
 				<h2 className="text-3xl font-semibold">About Us</h2>
 				<p className="mt-4 opacity-80">We’re the university’s Formula Student team…</p>
-				<BackgroundGradient className="mt-8 rounded-3xl p-8">
+				<GradientCard className="max-w-xl">
 					<p className="text-lg">We design and build high-performance race cars.</p>
-				</BackgroundGradient>
+				</GradientCard>
+
+				<HoverBorderGradientDemo />
 			</section>
 
 			<section id="sponsors" className="space-y-8">
