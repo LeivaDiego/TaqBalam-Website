@@ -44,10 +44,10 @@ export function NavigationBar() {
 								onClick={() => setIsMobileMenuOpen(false)}
 								className={({ isActive }) =>
 									[
-										'w-full rounded-md px-3 py-2',
+										'w-full rounded-lg px-3 py-2 transition-colors',
 										isActive
-											? 'bg-neutral-200 font-semibold dark:bg-neutral-800'
-											: 'hover:bg-neutral-100 dark:hover:bg-neutral-900',
+											? 'bg-brand-400/15 text-brand-300 ring-1 ring-brand-400/30'
+											: 'hover:bg-brand-400/10 hover:text-brand-300',
 									].join(' ')
 								}
 							>

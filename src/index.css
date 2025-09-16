@@ -69,6 +69,14 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+@layer utilities {
+	.font-cinzel {
+		font-family: 'Cinzel Decorative', serif;
+		font-weight: 900;
+		font-style: normal;
+	}
+}
+
 /* ---------- Aurora Background utility ---------- */
 
 @theme inline {
