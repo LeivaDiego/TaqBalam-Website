@@ -7,19 +7,24 @@ const techLogos = [
 	{ node: <SiTypescript />, title: 'TypeScript', href: 'https://www.typescriptlang.org' },
 	{ node: <SiTailwindcss />, title: 'Tailwind CSS', href: 'https://tailwindcss.com' },
 ]
+
 export function SponsorsLoop() {
 	return (
-		<div style={{ height: '200px', position: 'relative', overflow: 'hidden' }}>
+		<div
+			className={`relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 p-4
+				shadow-lg backdrop-blur`}
+			style={{ height: '150px' }}
+		>
 			<LogoLoop
 				logos={techLogos}
-				speed={80}
+				speed={120}
 				direction="right"
 				logoHeight={100}
-				gap={100}
+				gap={50}
 				pauseOnHover
 				scaleOnHover
-				fadeOut={false}
-				fadeOutColor="#000000"
+				fadeOut
+				fadeOutColor="#18181b"
 				ariaLabel="Sponsors Loop"
 			/>
 		</div>
