@@ -19,7 +19,8 @@ export function Season() {
 
 						<Reveal dir="up" blur={10}>
 							<p
-								className="text-lg leading-relaxed opacity-90 sm:text-xl"
+								className={`text-lg leading-relaxed text-[color:var(--color-brand-50)] opacity-90
+									sm:text-xl`}
 								style={{ textAlign: 'justify' }}
 							>
 								Presentaremos un vehículo renovado con mejoras en materiales, aerodinámica y

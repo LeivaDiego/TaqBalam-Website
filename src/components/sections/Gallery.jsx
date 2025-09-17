@@ -19,7 +19,12 @@ export function Gallery() {
 	return (
 		<section id="gallery" className="mx-auto max-w-7xl px-4 py-12 sm:py-16">
 			<Reveal dir="up" blur={10}>
-				<h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">Galería</h2>
+				<h2
+					className={`text-4xl font-semibold tracking-tight text-[color:var(--color-brand-50)]
+						sm:text-5xl`}
+				>
+					Galería
+				</h2>
 			</Reveal>
 
 			<Reveal dir="up" blur={10}>

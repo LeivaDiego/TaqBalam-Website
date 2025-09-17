@@ -15,7 +15,7 @@ export function Sponsors() {
 					rotationEnd="+=300"
 					wordAnimationEnd="+=300"
 					containerClassName="mb-4"
-					textClassName="font-semibold text-center" // centered
+					textClassName="font-semibold text-center text-[color:var(--color-brand-50)]" // centered
 				>
 					Patrocinadores
 				</ScrollReveal>

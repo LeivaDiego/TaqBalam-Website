@@ -71,8 +71,6 @@ export function Hero() {
 				ref={imgRef}
 				src={banner}
 				alt="Banner Taq'Balam 2025"
-				// Nota: style gobierna el tamaño <640px.
-				// En sm/md/lg, las clases de Tailwind sobre-escriben.
 				style={{ objectPosition: isPortrait ? '75% 22%' : '50% 18%' }}
 				className={`pointer-events-none absolute inset-0 h-full w-full object-cover
 					sm:object-[50%_22%] md:object-[50%_32%] lg:object-[50%_35%]`}
@@ -102,7 +100,7 @@ export function Hero() {
 				<h1
 					ref={titleRef}
 					className={`font-cinzel mt-2 text-[clamp(2.2rem,7vw,5rem)] leading-[1.05]
-						text-[color:var(--color-text)]`}
+						text-[color:var(--color-brand-50)]`}
 				>
 					Taq&apos;Balam
 				</h1>

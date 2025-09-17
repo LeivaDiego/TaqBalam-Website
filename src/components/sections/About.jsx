@@ -15,15 +15,21 @@ export function About() {
 				<div className="col-span-12 flex h-full flex-col justify-between md:col-span-6">
 					<div className="space-y-4">
 						<Reveal dir="up" once={false}>
-							<h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">Nosotros</h2>
+							<h2
+								className={`text-4xl font-semibold tracking-tight text-[color:var(--color-brand-50)]
+									sm:text-5xl`}
+							>
+								Nosotros
+							</h2>
 						</Reveal>
 
 						<Reveal dir="up" once={false}>
 							<p
-								className="text-lg leading-relaxed opacity-90 sm:text-xl"
+								className={`text-lg leading-relaxed text-[color:var(--color-text)] opacity-90
+									sm:text-xl`}
 								style={{ textAlign: 'justify' }}
 							>
-								<strong>Taq’Balam</strong> es un proyecto de la UVG que desarrolla un prototipo
+								<strong>Taq'Balam</strong> es un proyecto de la UVG que desarrolla un prototipo
 								eléctrico para investigación y sostenibilidad. Desde 2010, con apoyo del Instituto
 								de Investigaciones y Química UVG, representamos a Guatemala como el único equipo
 								centroamericano en competencias internacionales, demostrando que la movilidad
