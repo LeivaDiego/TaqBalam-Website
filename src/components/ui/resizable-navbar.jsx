@@ -2,7 +2,7 @@ import { cn } from '@Lib/utils'
 import { IconMenu2, IconX } from '@tabler/icons-react'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'motion/react'
 import React, { useRef, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import logo from '@Images/TaqBalam-Logo.svg'
 
 export const Navbar = ({ children, className }) => {
@@ -39,7 +39,7 @@ export const NavBody = ({ children, className, visible }) => {
 			}}
 			transition={{ type: 'spring', stiffness: 220, damping: 50 }}
 			style={{
-				minWidth: '800px',
+				minWidth: '950px',
 				'--shadow-nav': '0 0 0 1px var(--color-ring), 0 10px 40px rgba(0,0,0,.35)',
 			}}
 			className={cn(
@@ -161,9 +161,24 @@ export const MobileNavToggle = ({ isOpen, onClick }) => {
 	)
 }
 
-export const NavbarLogo = () => (
-	<NavLink to="/" className="relative z-20 mr-4 flex items-center gap-2 px-2 py-1 text-sm">
-		<img src={logo} alt="logo" width={30} height={30} />
-		<span className="font-cinzel text-text">Taq ' Balam</span>
-	</NavLink>
-)
+export const NavbarLogo = () => {
+	const { pathname } = useLocation()
+	const onClick = (e) => {
+		if (pathname === '/') {
+			e.preventDefault()
+			requestAnimationFrame(() => {
+				document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+			})
+		}
+	}
+	return (
+		<NavLink
+			to={{ pathname: '/', hash: '#hero' }}
+			onClick={onClick}
+			className="relative z-20 mr-4 flex items-center gap-2 px-2 py-1 text-sm"
+		>
+			<img src={logo} alt="logo" width={30} height={30} />
+			<span className="font-cinzel text-text">Taq ' Balam</span>
+		</NavLink>
+	)
+}

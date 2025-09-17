@@ -54,7 +54,7 @@ function YearBlock({ text, images }) {
 	)
 }
 
-export default function History() {
+export function History() {
 	const data = [
 		{
 			title: '2013',
@@ -158,34 +158,32 @@ export default function History() {
 	]
 
 	return (
-		<main className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
-			{/* Encabezado */}
+		<section id="historia" className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
 			<div className="mb-8 sm:mb-12">
 				<Reveal dir="up" blur={10}>
-					<h1
-						className={`text-[color:var(--color-brand-50) text-4xl font-semibold tracking-tight
+					<h2
+						className={`text-4xl font-semibold tracking-tight text-[color:var(--color-brand-50)]
 							sm:text-5xl`}
 					>
 						Nuestra Historia
-					</h1>
+					</h2>
 				</Reveal>
 				<Reveal dir="up" blur={10} amount={0.3}>
 					<p className="mt-5 text-[clamp(1.05rem,1.25vw+0.95rem,1.4rem)] leading-relaxed">
 						Más de una década de aprendizaje, ingeniería y perseverancia.
 					</p>
 					<p className="mt-2 max-w-3xl text-[clamp(1.05rem,1.2vw+0.9rem,1.35rem)] opacity-90">
-						Desliza para conocer la historia de Taq'Balam. Descubre a las generaciones de Huracán a
+						Desliza para conocer la historia de Taq’Balam. Descubre a las generaciones de Huracán a
 						lo largo de nuestra participación en Shell Eco-marathon Americas.
 					</p>
 				</Reveal>
 			</div>
 
-			{/* Timeline */}
 			<div className="relative w-full overflow-visible">
 				<BackgroundGradient className="bg-bg p-1 sm:p-10">
 					<Timeline data={data} />
 				</BackgroundGradient>
 			</div>
-		</main>
+		</section>
 	)
 }

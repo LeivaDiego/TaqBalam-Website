@@ -3,7 +3,6 @@ import { AuroraBackground } from '@UI/aurora-background'
 import { ScrollToTop } from '@Navigation/ScrollToTop'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home.jsx'
-import History from './pages/History.jsx'
 
 export default function App() {
 	return (
@@ -14,7 +13,6 @@ export default function App() {
 				<main>
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/historia" element={<History />} />
 						<Route path="*" element={<Navigate to="/" replace />} />
 					</Routes>
 				</main>

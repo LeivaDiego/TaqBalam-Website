@@ -68,6 +68,10 @@ body {
 		sans-serif;
 }
 
+[id] {
+	scroll-margin-top: 72px;
+}
+
 /* Text rendering */
 * {
 	-webkit-font-smoothing: antialiased;

@@ -6,6 +6,7 @@ import { Season } from '@Sections/Season'
 import { Gallery } from '@Sections/Gallery'
 import { JoinUs } from '@Sections/JoinUs'
 import { Contact } from '@Sections/Contact'
+import { History } from '@Sections/History'
 
 export default function Home() {
 	return (
@@ -16,6 +17,7 @@ export default function Home() {
 			<Season />
 			<Gallery />
 			<JoinUs />
+			<History />
 			<Contact />
 		</div>
 	)
