@@ -51,6 +51,7 @@ export function Hero() {
 					scrub: true,
 					pin: true,
 					pinSpacing: true,
+					anticipatePin: 1,
 				},
 				defaults: { ease: 'none' },
 			})

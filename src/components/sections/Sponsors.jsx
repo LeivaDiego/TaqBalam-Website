@@ -1,5 +1,6 @@
 import { ScrollReveal } from '@Text/ScrollReveal'
 import { SponsorsLoop } from '@Widgets/SponsorsLoop'
+import { Reveal } from '@UI/reveal'
 
 export function Sponsors() {
 	return (
@@ -22,7 +23,9 @@ export function Sponsors() {
 
 			{/* Loop expandido al resto de la pantalla */}
 			<div className="flex-1">
-				<SponsorsLoop />
+				<Reveal dir="up" once={false} amount={0.3} blur={15}>
+					<SponsorsLoop />
+				</Reveal>
 			</div>
 		</section>
 	)
