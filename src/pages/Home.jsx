@@ -3,6 +3,7 @@ import { Hero } from '@Sections/Hero'
 import { Sponsors } from '@Sections/Sponsors'
 import { About } from '@Sections/About'
 import { Season } from '@Sections/Season'
+import { Gallery } from '@Sections/Gallery'
 
 export default function Home() {
 	return (
@@ -11,6 +12,7 @@ export default function Home() {
 			<About />
 			<Sponsors />
 			<Season />
+			<Gallery />
 		</div>
 	)
 }

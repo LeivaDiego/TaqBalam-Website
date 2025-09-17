@@ -111,6 +111,7 @@ class Media {
 		viewport,
 		bend,
 		textColor,
+		showLabels = false,
 		borderRadius = 0,
 		font,
 	}) {
@@ -123,6 +124,7 @@ class Media {
 		this.renderer = renderer
 		this.scene = scene
 		this.screen = screen
+		this.showLabels = showLabels
 		this.text = text
 		this.viewport = viewport
 		this.bend = bend
@@ -214,6 +216,7 @@ class Media {
 		this.plane.setParent(this.scene)
 	}
 	createTitle() {
+		if (!this.showLabels || !this.text) return
 		this.title = new Title({
 			gl: this.gl,
 			plane: this.plane,
@@ -297,9 +300,11 @@ class App {
 			font = 'bold 30px Figtree',
 			scrollSpeed = 2,
 			scrollEase = 0.05,
+			showLabels = false,
 		} = {},
 	) {
 		document.documentElement.classList.remove('no-js')
+		this.showLabels = showLabels
 		this.container = container
 		this.scrollSpeed = scrollSpeed
 		this.scroll = { ease: scrollEase, current: 0, target: 0, last: 0 }
@@ -353,6 +358,7 @@ class App {
 				scene: this.scene,
 				screen: this.screen,
 				text: data.text,
+				showLabels: this.showLabels,
 				viewport: this.viewport,
 				bend,
 				textColor,
