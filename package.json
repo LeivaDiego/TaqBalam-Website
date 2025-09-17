@@ -24,6 +24,7 @@
 		"@tailwindcss/vite": "^4.1.13",
 		"clsx": "^2.1.1",
 		"gsap": "^3.13.0",
+		"lucide-react": "^0.544.0",
 		"mathjs": "^14.7.0",
 		"motion": "^12.23.12",
 		"ogl": "^1.0.11",
