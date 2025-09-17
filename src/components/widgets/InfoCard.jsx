@@ -1,3 +1,4 @@
+// widgets/InfoCard.jsx
 import { HoverBorderGradient } from '@UI/hover-border-gradient'
 
 export function InfoCard({ icon, title, text, titleClass = '' }) {
@@ -5,8 +6,9 @@ export function InfoCard({ icon, title, text, titleClass = '' }) {
 		<HoverBorderGradient
 			as="div"
 			duration={1.2}
-			containerClassName="rounded-2xl w-full"
-			className="flex flex-col !bg-white/5 !px-6 !py-6 backdrop-blur-sm md:!p-8"
+			containerClassName="w-full rounded-2xl bg-transparent" // ← no shell bg, stretch
+			className={`// ← stretch inner flex w-full flex-col !bg-white/5 !px-6 !py-6 backdrop-blur-sm
+				md:!p-8`}
 		>
 			<div className="flex items-start gap-3">
 				{icon}
