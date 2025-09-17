@@ -7,7 +7,7 @@
 	"scripts": {
 		"build": "vite build",
 		"predeploy": "npm run build",
-		"deploy": "gh-pages -d dist -c taqbalam.lat",
+		"deploy": "gh-pages -d dist",
 		"dev": "vite",
 		"format": "prettier --check .",
 		"format:fix": "prettier --write .",
