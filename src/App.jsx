@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { NavigationBar } from '@Navigation/NavigationBar'
 import { AuroraBackground } from '@UI/aurora-background'
 import Home from './pages/Home.jsx'
+import History from './pages/History.jsx'
 
 export default function App() {
 	useEffect(() => {
@@ -13,7 +14,7 @@ export default function App() {
 			<div className="relative z-10 min-h-screen text-neutral-100">
 				<NavigationBar />
 				<main>
-					<Home />
+					<History />
 				</main>
 				<footer className="bg-black/20 py-12 text-center opacity-90 backdrop-blur-sm">
 					© Taq'Balam 2025. Todos los derechos reservados.
