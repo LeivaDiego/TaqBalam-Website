@@ -1,7 +1,7 @@
 // sections/About.jsx
 import React from 'react'
 import { Sparkles, Leaf } from 'lucide-react'
-import { GradientCard } from '@Widgets/GradientCard'
+import { BackgroundGradient } from '@UI/background-gradient'
 import { InfoCard } from '@Widgets/InfoCard'
 import { Reveal } from '@UI/reveal'
 import videoSrc from '@Videos/TaqBalam2025 Video.mp4'
@@ -9,7 +9,7 @@ import videoPoster from '@Images/TaqBalam-Logo-Color.svg'
 
 export function About() {
 	return (
-		<section id="about" className="mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:py-20">
+		<section id="about" className="mx-auto max-w-7xl overflow-visible px-4 py-16 sm:py-20">
 			<div className="grid grid-cols-12 items-stretch gap-8">
 				{/* Left column */}
 				<div className="col-span-12 flex h-full flex-col justify-between md:col-span-6">
@@ -55,9 +55,9 @@ export function About() {
 
 				{/* Right column: video */}
 				<div className="col-span-12 flex md:col-span-6">
-					<Reveal dir="right" once={false}>
-						<GradientCard borderWidth={4} padding="p-4 sm:p-6" className="h-full w-full">
-							<div className="flex h-full w-full overflow-hidden rounded-xl">
+					<Reveal dir="right" once={false} clip={false}>
+						<BackgroundGradient className="bg-bg p-4 sm:p-10">
+							<div className="flex h-full w-full overflow-visible rounded-xl">
 								<video
 									className="h-auto max-h-full w-full self-end rounded-xl"
 									src={videoSrc}
@@ -69,7 +69,7 @@ export function About() {
 									preload="auto"
 								/>
 							</div>
-						</GradientCard>
+						</BackgroundGradient>
 					</Reveal>
 				</div>
 			</div>

@@ -7,14 +7,15 @@ export function BackgroundGradient({
 	className,
 	containerClassName,
 	animate = true,
-	borderWidth = 4,
-	radius = 22,
+	borderWidth = 4, // px
+	radius = 22, // px
 }) {
 	const variants = {
 		initial: { backgroundPosition: '0% 50%' },
 		animate: { backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] },
 	}
 
+	// Theme-driven colors
 	const styleVars = {
 		'--bw': `${borderWidth}px`,
 		'--r': `${radius}px`,
@@ -26,43 +27,35 @@ export function BackgroundGradient({
 	}
 
 	const bgClass =
-		'bg-[radial-gradient(circle_farthest-side_at_0%_100%,var(--c1)_0%,transparent_60%),radial-gradient(circle_farthest-side_at_100%_0%,var(--c2)_0%,transparent_60%),radial-gradient(circle_farthest-side_at_100%_100%,var(--c3)_0%,transparent_60%),radial-gradient(circle_farthest-side_at_0%_0%,var(--c4)_0%,var(--base)_70%)]'
+		'bg-[radial-gradient(circle_farthest-side_at_0%_100%,var(--c1),transparent),radial-gradient(circle_farthest-side_at_100%_0%,var(--c2),transparent),radial-gradient(circle_farthest-side_at_100%_100%,var(--c3),transparent),radial-gradient(circle_farthest-side_at_0%_0%,var(--c4),var(--base))]'
 
 	return (
-		<div className={cn('group relative inline-block', containerClassName)} style={styleVars}>
-			{/* Padding equals border thickness; outer radius = inner radius */}
-			<div className="relative rounded-[var(--r)] p-[var(--bw)]">
-				{/* Glow */}
-				<motion.div
-					variants={animate ? variants : undefined}
-					initial={animate ? 'initial' : undefined}
-					animate={animate ? 'animate' : undefined}
-					transition={
-						animate ? { duration: 6, repeat: Infinity, repeatType: 'reverse' } : undefined
-					}
-					style={{ backgroundSize: animate ? '400% 400%' : undefined }}
-					className={cn(
-						`absolute inset-0 z-[1] rounded-[inherit] opacity-60 blur-xl transition duration-500
-						will-change-transform group-hover:opacity-100`,
-						bgClass,
-					)}
-				/>
-				{/* Crisp */}
-				<motion.div
-					variants={animate ? variants : undefined}
-					initial={animate ? 'initial' : undefined}
-					animate={animate ? 'animate' : undefined}
-					transition={
-						animate ? { duration: 6, repeat: Infinity, repeatType: 'reverse' } : undefined
-					}
-					style={{ backgroundSize: animate ? '400% 400%' : undefined }}
-					className={cn('absolute inset-0 z-[1] rounded-[inherit] will-change-transform', bgClass)}
-				/>
-
-				{/* Child surface goes here. You control bg and radius. */}
-				<div className={cn('relative z-10 rounded-[calc(var(--r)-var(--bw))]', className)}>
-					{children}
-				</div>
+		<div className={cn('group relative p-[var(--bw)]', containerClassName)} style={styleVars}>
+			{/* hover glow */}
+			<motion.div
+				variants={animate ? variants : undefined}
+				initial={animate ? 'initial' : undefined}
+				animate={animate ? 'animate' : undefined}
+				transition={animate ? { duration: 5, repeat: Infinity, repeatType: 'reverse' } : undefined}
+				style={{ backgroundSize: animate ? '400% 400%' : undefined }}
+				className={cn(
+					`absolute inset-0 z-[1] rounded-[var(--r)] opacity-60 blur-xl transition duration-500
+					will-change-transform group-hover:opacity-100`,
+					bgClass,
+				)}
+			/>
+			{/* crisp tint */}
+			<motion.div
+				variants={animate ? variants : undefined}
+				initial={animate ? 'initial' : undefined}
+				animate={animate ? 'animate' : undefined}
+				transition={animate ? { duration: 5, repeat: Infinity, repeatType: 'reverse' } : undefined}
+				style={{ backgroundSize: animate ? '400% 400%' : undefined }}
+				className={cn('absolute inset-0 z-[1] rounded-[var(--r)] will-change-transform', bgClass)}
+			/>
+			{/* content */}
+			<div className={cn('relative z-10 rounded-[calc(var(--r)-var(--bw))]', className)}>
+				{children}
 			</div>
 		</div>
 	)
