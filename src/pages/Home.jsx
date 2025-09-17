@@ -4,6 +4,7 @@ import { Sponsors } from '@Sections/Sponsors'
 import { About } from '@Sections/About'
 import { Season } from '@Sections/Season'
 import { Gallery } from '@Sections/Gallery'
+import { JoinUs } from '@Sections/JoinUs'
 
 export default function Home() {
 	return (
@@ -13,6 +14,7 @@ export default function Home() {
 			<Sponsors />
 			<Season />
 			<Gallery />
+			<JoinUs />
 		</div>
 	)
 }
