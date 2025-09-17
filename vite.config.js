@@ -6,7 +6,7 @@ import { fileURLToPath, URL } from 'node:url'
 // Import other plugins as needed
 export default defineConfig({
 	plugins: [react(), tailwindcss()],
-	base: '/TaqBalam-Website/', // Set your base path here
+	base: '/', // Custom Domain Base Path
 	resolve: {
 		alias: {
 			// Root Alias
