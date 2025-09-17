@@ -41,6 +41,11 @@
 }
 
 html,
+body {
+	overflow-anchor: none;
+}
+
+html,
 body,
 #root {
 	height: 100%;
