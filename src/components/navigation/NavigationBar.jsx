@@ -13,7 +13,7 @@ import { motion } from 'motion/react'
 import { cn } from '@Lib/utils'
 import logo from '@Images/TaqBalam-Logo.svg'
 
-const HERO_ID = 'hero'
+const HERO_ID = 'home'
 const SECTIONS = [
 	{ name: 'Nosotros', id: 'about' },
 	{ name: 'Patrocinadores', id: 'sponsors' },
@@ -118,22 +118,14 @@ export function NavigationBar() {
 	)
 }
 
-/* Logo: scrolls to #hero if already on the page */
+/* Logo: scrolls to #home if already on the page */
 function LogoLink() {
-	const onClick = (e) => {
-		// always same page
-		e.preventDefault()
-		requestAnimationFrame(() => {
-			document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-		})
-	}
 	return (
 		<NavLink
-			to={{ pathname: '/', hash: '#hero' }}
-			onClick={onClick}
+			to={{ pathname: '/', hash: '#home' }}
 			className="relative z-20 mr-4 flex items-center gap-2 px-2 py-1 text-sm"
 		>
-			<img src={logo} alt="Taq’Balam" width={30} height={30} />
+			<img src={logo} alt="Taq'Balam" width={30} height={30} />
 			<span className="font-cinzel text-text">Taq ' Balam</span>
 		</NavLink>
 	)

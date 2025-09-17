@@ -14,7 +14,6 @@ export function Hero() {
 	const tintRef = useRef(null)
 	const imgRef = useRef(null)
 
-	// NEW: detectar portrait (width < height)
 	const [isPortrait, setIsPortrait] = useState(false)
 	useLayoutEffect(() => {
 		const check = () => setIsPortrait(window.innerWidth < window.innerHeight)
