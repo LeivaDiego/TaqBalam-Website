@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const ScrollReveal = ({
+export const ScrollReveal = ({
 	children,
 	scrollContainerRef,
 	enableBlur = true,
@@ -112,5 +112,3 @@ const ScrollReveal = ({
 		</h2>
 	)
 }
-
-export { ScrollReveal }

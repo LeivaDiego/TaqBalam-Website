@@ -1,18 +1,99 @@
 import { LogoLoop } from '@UI/logo-animation-loop'
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si'
 
-const techLogos = [
-	{ node: <SiReact className="text-brand-50" />, title: 'React', href: 'https://react.dev' },
-	{ node: <SiNextdotjs className="text-brand-50" />, title: 'Next.js', href: 'https://nextjs.org' },
+// SVGs
+import AgregadosSanJose from '@Images/Sponsors/AgregadosSanJose.svg'
+import Alfredos from '@Images/Sponsors/Alfredos.svg'
+import Amegua from '@Images/Sponsors/Amegua.svg'
+import FibraFina from '@Images/Sponsors/FibraFina.svg'
+import Shell from '@Images/Sponsors/Shell.svg'
+import Uno from '@Images/Sponsors/Uno.svg'
+import UVG from '@Images/Sponsors/UVG.svg'
+
+// Reutilizable: logos como <img> para respetar colores y proporciones del SVG
+const sponsorLogos = [
 	{
-		node: <SiTypescript className="text-brand-50" />,
-		title: 'TypeScript',
-		href: 'https://www.typescriptlang.org',
+		node: (
+			<img
+				src={AgregadosSanJose}
+				alt="Agregados San José"
+				className="h-[var(--logoloop-logoHeight)] w-auto object-contain"
+				loading="lazy"
+			/>
+		),
+		title: 'Agregados San José',
+		href: '',
 	},
 	{
-		node: <SiTailwindcss className="text-brand-50" />,
-		title: 'Tailwind CSS',
-		href: 'https://tailwindcss.com',
+		node: (
+			<img
+				src={Alfredos}
+				alt="Alfredo’s"
+				className="h-[var(--logoloop-logoHeight)] w-auto object-contain"
+				loading="lazy"
+			/>
+		),
+		title: 'Alfredo’s',
+		href: '',
+	},
+	{
+		node: (
+			<img
+				src={Amegua}
+				alt="AMEGUA"
+				className="h-[var(--logoloop-logoHeight)] w-auto object-contain"
+				loading="lazy"
+			/>
+		),
+		title: 'AMEGUA',
+		href: '',
+	},
+	{
+		node: (
+			<img
+				src={FibraFina}
+				alt="Fibra Fina"
+				className="h-[var(--logoloop-logoHeight)] w-auto object-contain"
+				loading="lazy"
+			/>
+		),
+		title: 'Fibra Fina',
+		href: '',
+	},
+	{
+		node: (
+			<img
+				src={Shell}
+				alt="Shell"
+				className="h-[var(--logoloop-logoHeight)] w-auto object-contain"
+				loading="lazy"
+			/>
+		),
+		title: 'Shell',
+		href: '',
+	},
+	{
+		node: (
+			<img
+				src={Uno}
+				alt="UNO"
+				className="h-[var(--logoloop-logoHeight)] w-auto object-contain"
+				loading="lazy"
+			/>
+		),
+		title: 'UNO',
+		href: '',
+	},
+	{
+		node: (
+			<img
+				src={UVG}
+				alt="UVG"
+				className="h-[var(--logoloop-logoHeight)] w-auto object-contain"
+				loading="lazy"
+			/>
+		),
+		title: 'UVG',
+		href: '',
 	},
 ]
 
@@ -31,7 +112,7 @@ export function SponsorsLoop() {
 			].join(' ')}
 		>
 			<LogoLoop
-				logos={techLogos}
+				logos={sponsorLogos}
 				speed={80}
 				direction="right"
 				pauseOnHover

@@ -5,7 +5,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Hero() {
+export function Hero() {
 	const sectionRef = useRef(null)
 	const vehiculosRef = useRef(null)
 	const titleRef = useRef(null)

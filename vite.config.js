@@ -16,6 +16,9 @@ export default defineConfig({
 			'@Navigation': fileURLToPath(new URL('./src/components/navigation', import.meta.url)),
 			'@Text': fileURLToPath(new URL('./src/components/text', import.meta.url)),
 			'@Widgets': fileURLToPath(new URL('./src/components/widgets', import.meta.url)),
+			'@Sections': fileURLToPath(new URL('./src/components/sections', import.meta.url)),
+			// Page Aliases
+			'@Pages': fileURLToPath(new URL('./src/pages', import.meta.url)),
 			// Asset Aliases
 			'@Assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
 			'@Images': fileURLToPath(new URL('./src/assets/images', import.meta.url)),
