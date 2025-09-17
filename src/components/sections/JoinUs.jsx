@@ -74,7 +74,7 @@ export function JoinUs() {
 							<div className="mb-5 flex items-center gap-2 text-[color:var(--color-brand-200)]">
 								<Handshake className="size-5" />
 								<h3 className="text-2xl font-bold text-[color:var(--color-brand-200)]">
-									¿Por qué patrocinar a Taq Balam?
+									¿Por qué patrocinar a Taq'Balam?
 								</h3>
 							</div>
 							<ul className="space-y-3">
