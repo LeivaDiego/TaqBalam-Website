@@ -1,5 +1,4 @@
-// src/components/sections/Hero.jsx
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 import { HoverBorderButton } from '@Widgets/HoverBorderButton'
 import banner from '@Images/Taq2025/Banner.webp'
 import { gsap } from 'gsap'
@@ -15,9 +14,17 @@ export default function Hero() {
 	const tintRef = useRef(null)
 	const imgRef = useRef(null)
 
+	// NEW: detectar portrait (width < height)
+	const [isPortrait, setIsPortrait] = useState(false)
+	useLayoutEffect(() => {
+		const check = () => setIsPortrait(window.innerWidth < window.innerHeight)
+		check()
+		window.addEventListener('resize', check)
+		return () => window.removeEventListener('resize', check)
+	}, [])
+
 	useLayoutEffect(() => {
 		const ctx = gsap.context(() => {
-			// inicial
 			gsap.set([vehiculosRef.current, creandoRef.current, ctasRef.current], {
 				opacity: 0,
 				y: 20,
@@ -27,7 +34,6 @@ export default function Hero() {
 			gsap.set(tintRef.current, { opacity: 0.6 })
 			gsap.set(imgRef.current, { scale: 1.05, opacity: 1 })
 
-			// título auto al cargar
 			gsap.to(titleRef.current, {
 				opacity: 1,
 				y: 0,
@@ -37,7 +43,6 @@ export default function Hero() {
 				ease: 'power2.out',
 			})
 
-			// scroll
 			const tl = gsap.timeline({
 				scrollTrigger: {
 					trigger: sectionRef.current,
@@ -65,8 +70,11 @@ export default function Hero() {
 				ref={imgRef}
 				src={banner}
 				alt="Banner Taq'Balam 2025"
-				className={`pointer-events-none absolute inset-0 h-full w-full object-contain object-top
-					md:object-cover`}
+				// Nota: style gobierna el tamaño <640px.
+				// En sm/md/lg, las clases de Tailwind sobre-escriben.
+				style={{ objectPosition: isPortrait ? '75% 22%' : '50% 18%' }}
+				className={`pointer-events-none absolute inset-0 h-full w-full object-cover
+					sm:object-[50%_22%] md:object-[50%_32%] lg:object-[50%_35%]`}
 				loading="eager"
 				decoding="async"
 				fetchPriority="high"
@@ -77,7 +85,7 @@ export default function Hero() {
 				className={`pointer-events-none absolute inset-0
 					bg-[linear-gradient(to_top,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.25)_35%,rgba(0,0,0,0.15)_65%,rgba(0,0,0,0)_100%)]`}
 			/>
-			<div ref={tintRef} className="pointer-events-none absolute inset-0 bg-black" />
+			<div ref={tintRef} className="pointer-events-none absolute inset-0 bg-black/60" />
 
 			<div
 				className={`relative z-10 w-full pr-6 pb-[calc(env(safe-area-inset-bottom)+3rem)] pl-6
@@ -85,8 +93,8 @@ export default function Hero() {
 			>
 				<p
 					ref={vehiculosRef}
-					className={`text-[clamp(0.95rem,2.3vw,1.25rem)] font-medium
-						text-[color:var(--color-muted)]`}
+					className={`text-[clamp(1.5rem,2.8vw,1.35rem)] font-medium
+						text-[color:var(--color-brand-500)]`}
 				>
 					Vehículos eficientes e Innovación energética
 				</p>
