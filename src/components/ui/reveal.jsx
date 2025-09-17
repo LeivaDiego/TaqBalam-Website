@@ -1,3 +1,4 @@
+// @UI/reveal.jsx
 import React, { useEffect, useRef } from 'react'
 import { motion, useAnimation, useInView } from 'motion/react'
 
@@ -8,6 +9,7 @@ export function Reveal({
 	once = false,
 	amount = 0.35,
 	blur = 12,
+	clip = true, // NEW: controls overflow
 }) {
 	const controls = useAnimation()
 	const ref = useRef(null)
@@ -23,13 +25,7 @@ export function Reveal({
 
 	useEffect(() => {
 		if (inView) {
-			controls.start({
-				opacity: 1,
-				x: 0,
-				y: 0,
-				filter: 'blur(0px)',
-				transition: { duration: 0.5 },
-			})
+			controls.start({ opacity: 1, x: 0, y: 0, filter: 'blur(0px)', transition: { duration: 0.5 } })
 		} else if (!once) {
 			controls.start(hiddenByDir)
 		}
@@ -37,7 +33,7 @@ export function Reveal({
 	}, [inView])
 
 	return (
-		<div ref={ref} className={`overflow-hidden ${className}`}>
+		<div ref={ref} className={`${clip ? 'overflow-hidden' : 'overflow-visible'} ${className}`}>
 			<motion.div
 				initial={hiddenByDir}
 				animate={controls}

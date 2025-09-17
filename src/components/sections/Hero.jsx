@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
-import { HoverBorderButton } from '@Widgets/HoverBorderButton'
+import { HoverBorderButton } from '@Buttons/HoverBorderButton'
 import banner from '@Images/Taq2025/Banner.webp'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'

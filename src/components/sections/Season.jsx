@@ -1,17 +1,17 @@
 // sections/Season.jsx
 import React from 'react'
 import { Layers, Wind, FlaskConical, Cpu } from 'lucide-react'
-import { GradientCard } from '@Widgets/GradientCard'
+import { BackgroundGradient } from '@UI/background-gradient'
 import { InfoCard } from '@Widgets/InfoCard'
 import { Reveal } from '@UI/reveal'
 import seasonVideo from '@Videos/TaqSeason25.mp4'
 
 export function Season() {
 	return (
-		<section id="season" className="mx-auto max-w-7xl overflow-hidden px-4 py-12 sm:py-16">
+		<section id="season" className="mx-auto max-w-7xl overflow-visible px-4 py-12 sm:py-16">
 			<div className="grid grid-cols-12 items-stretch gap-6 sm:gap-8">
 				{/* Text first on mobile, right on desktop */}
-				<div className="order-1 col-span-12 md:order-2 md:col-span-6">
+				<div className="relative z-10 order-1 col-span-12 md:order-2 md:col-span-6">
 					<div className="space-y-4">
 						<Reveal dir="up" blur={10}>
 							<h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">Temporada 2025</h2>
@@ -73,9 +73,12 @@ export function Season() {
 				</div>
 
 				{/* Video second on mobile, left on desktop */}
-				<div className="order-2 col-span-12 md:order-1 md:col-span-6">
-					<Reveal dir="left" blur={10}>
-						<GradientCard borderWidth={3} padding="p-3 sm:p-5" className="w-full">
+				<div className="relative z-0 order-2 col-span-12 overflow-visible md:order-1 md:col-span-6">
+					<Reveal dir="left" blur={10} clip={false} className="overflow-visible">
+						<BackgroundGradient
+							containerClassName="overflow-visible"
+							className="rounded-[22px] bg-bg p-3 sm:p-5"
+						>
 							<div className="overflow-hidden rounded-xl">
 								<video
 									className="h-auto w-full rounded-xl"
@@ -87,7 +90,7 @@ export function Season() {
 									preload="auto"
 								/>
 							</div>
-						</GradientCard>
+						</BackgroundGradient>
 					</Reveal>
 				</div>
 			</div>
