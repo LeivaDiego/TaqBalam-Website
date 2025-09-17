@@ -1,5 +1,6 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl'
 import { useEffect, useRef } from 'react'
+import placeholderImg from '@Images/image-placeholder.webp'
 
 function debounce(func, wait) {
 	let timeout
@@ -335,9 +336,9 @@ class App {
 	}
 	createMedias(items, bend = 1, textColor, borderRadius, font) {
 		const defaultItems = [
-			{ image: `src/assets/images/image-placeholder.webp`, text: 'Placeholder' },
-			{ image: `src/assets/images/image-placeholder.webp`, text: 'Placeholder' },
-			{ image: `src/assets/images/image-placeholder.webp`, text: 'Placeholder' },
+			{ image: placeholderImg, text: 'Placeholder' },
+			{ image: placeholderImg, text: 'Placeholder' },
+			{ image: placeholderImg, text: 'Placeholder' },
 		]
 		const galleryItems = items && items.length ? items : defaultItems
 		this.mediasImages = galleryItems.concat(galleryItems)

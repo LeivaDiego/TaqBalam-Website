@@ -3,6 +3,7 @@ import { IconMenu2, IconX } from '@tabler/icons-react'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'motion/react'
 import React, { useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import logo from '@Images/TaqBalam-Logo.svg'
 
 export const Navbar = ({ children, className }) => {
 	const ref = useRef(null)
@@ -162,7 +163,7 @@ export const MobileNavToggle = ({ isOpen, onClick }) => {
 
 export const NavbarLogo = () => (
 	<NavLink to="/" className="relative z-20 mr-4 flex items-center gap-2 px-2 py-1 text-sm">
-		<img src="src/assets/images/TaqBalam-Logo.svg" alt="logo" width={30} height={30} />
+		<img src={logo} alt="logo" width={30} height={30} />
 		<span className="font-cinzel text-text">Taq ' Balam</span>
 	</NavLink>
 )
