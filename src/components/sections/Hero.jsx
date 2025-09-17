@@ -113,7 +113,7 @@ export function Hero() {
 				<div ref={ctasRef} className="mt-8 flex flex-wrap gap-3">
 					<HoverBorderButton
 						as="a"
-						href="#sponsors"
+						href="#patrocinio"
 						label="Ser Patrocinador"
 						bgClassName="bg-primary"
 						textClassName="text-primary-foreground"
