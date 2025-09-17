@@ -1,0 +1,2 @@
+# Execute commitlint with the local binary (universal for Win/Mac/Linux)
+node ./node_modules/@commitlint/cli/cli.js --edit "$1"

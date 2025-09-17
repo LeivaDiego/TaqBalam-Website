@@ -1,0 +1,2 @@
+# Execute lint-staged before each commit to ensure code quality
+node ./node_modules/lint-staged/bin/lint-staged.js

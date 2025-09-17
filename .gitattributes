@@ -1,0 +1,5 @@
+# Force line endings to be LF in all text files
+* text=auto eol=lf
+
+# Ensure that Husky hooks always have LF
+.husky/* text eol=lf
