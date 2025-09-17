@@ -44,7 +44,11 @@ export function JoinUs() {
 	]
 
 	return (
-		<section id="patrocinio" className="mx-auto max-w-6xl overflow-visible px-4 py-12">
+		<section
+			id="patrocinio"
+			className={`mx-auto max-w-6xl overflow-visible px-4 py-12
+				[@media(orientation:portrait)]:overflow-hidden`}
+		>
 			{/* Título + subtítulo */}
 			<div className="mb-8 sm:mb-10">
 				<Reveal dir="up" blur={10}>

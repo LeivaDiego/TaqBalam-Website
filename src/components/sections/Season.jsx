@@ -8,7 +8,11 @@ import seasonVideo from '@Videos/TaqSeason25.mp4'
 
 export function Season() {
 	return (
-		<section id="season" className="mx-auto max-w-7xl overflow-visible px-4 py-12 sm:py-16">
+		<section
+			id="season"
+			className={`mx-auto max-w-7xl overflow-visible px-4 py-12 sm:py-16
+				[@media(orientation:portrait)]:overflow-hidden`}
+		>
 			<div className="grid grid-cols-12 items-stretch gap-6 sm:gap-8">
 				{/* Text first on mobile, right on desktop */}
 				<div className="relative z-10 order-1 col-span-12 md:order-2 md:col-span-6">

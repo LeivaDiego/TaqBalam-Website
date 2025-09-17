@@ -179,7 +179,11 @@ export function History() {
 				</Reveal>
 			</div>
 
-			<div className="relative w-full overflow-visible">
+			<div
+				className={
+					'relative w-full overflow-visible [@media(orientation:portrait)]:overflow-hidden'
+				}
+			>
 				<BackgroundGradient className="bg-bg p-1 sm:p-10">
 					<Timeline data={data} />
 				</BackgroundGradient>

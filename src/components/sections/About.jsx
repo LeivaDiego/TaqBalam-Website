@@ -9,7 +9,11 @@ import videoPoster from '@Images/TaqBalam-Logo-Color.svg'
 
 export function About() {
 	return (
-		<section id="about" className="mx-auto max-w-7xl overflow-visible px-4 py-16 sm:py-20">
+		<section
+			id="about"
+			className={`mx-auto max-w-7xl overflow-visible px-4 py-16 sm:py-20
+				[@media(orientation:portrait)]:overflow-hidden`}
+		>
 			<div className="grid grid-cols-12 items-stretch gap-8">
 				{/* Left column */}
 				<div className="col-span-12 flex h-full flex-col justify-between md:col-span-6">

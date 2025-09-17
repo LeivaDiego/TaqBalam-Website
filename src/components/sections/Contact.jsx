@@ -49,7 +49,11 @@ export function Contact() {
 	]
 
 	return (
-		<section id="contacto" className="mx-auto max-w-6xl overflow-visible px-4 py-16">
+		<section
+			id="contacto"
+			className={`mx-auto max-w-6xl overflow-visible px-4 py-16
+				[@media(orientation:portrait)]:overflow-hidden`}
+		>
 			{/* Header */}
 			<div className="mb-8 sm:mb-10">
 				<Reveal dir="up" blur={10}>
